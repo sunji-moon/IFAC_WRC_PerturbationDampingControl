@@ -1,0 +1,23 @@
+# Python
+__pycache__/
+*.pyc
+.venv/
+.IFAC_env/
+
+# Experiment data (not published)
+data/
+*.csv
+*.bin
+torque_png/
+
+# Build outputs
+Debug/
+Release/
+*.elf
+*.hex
+*.map
+*.o
+
+# Editor
+.vscode/
+.claude/
