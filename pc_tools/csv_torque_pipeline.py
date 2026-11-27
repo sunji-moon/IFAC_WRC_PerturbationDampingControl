@@ -7,7 +7,7 @@ damping controller in
 
 It answers: "If I flashed damping_assist_control.c as user_app.c and a recorded
 perturbation had happened while it was ACTIVE and armed, what torque would the
-H10 have commanded?" — computed from data we already have (the 0821 ND_5 robot
+H10 have commanded?" — computed from data we already have (recorded team robot
 CSVs), before ever putting torque on a person.
 
 WHY A SEPARATE ENGINE (not the GUI's simulate_controller)
@@ -30,7 +30,7 @@ ControllerParams, so the two stay in lock-step.
 WHAT IT NEEDS FROM THE CSV
 --------------------------
 Real robot CSV columns used:  mcu_time_ms, right_hip_angle_deg, left_hip_angle_deg,
-h10_right_foot_contact, h10_left_foot_contact  (all present in the ND_5 logs).
+h10_right_foot_contact, h10_left_foot_contact  (all present in the team robot logs).
 Velocity is RECONSTRUCTED from the encoder angle exactly like the firmware; the
 logged *_hip_velocity_dps column (a 20 Hz DAQ estimate) is only shown for
 reference.
@@ -57,11 +57,11 @@ CAVEATS (be honest)
 USAGE
 -----
 Single trial, show + save:
-    python csv_torque_pipeline.py "data/20260821/ND_5/..._trip_like_..._T03_robot.csv" \
+    python csv_torque_pipeline.py "data/<date>/<subject>/..._trip_like_..._T03_robot.csv" \
         --event TRIP --show --save out.png
 
-Batch every ND_5 trial to PNGs:
-    python csv_torque_pipeline.py --batch "data/20260821/ND_5" --outdir torque_png
+Batch every trial in a folder to PNGs:
+    python csv_torque_pipeline.py --batch "data/<date>/<subject>" --outdir torque_png
 
 Drive the tuning GUI on a real trial (sliders update the real-CSV torque):
     python csv_torque_pipeline.py "..._T03_robot.csv" --event TRIP --gui
@@ -1238,7 +1238,7 @@ def main(argv=None):
 # --------------------------------------------------------------------------- #
 def launch_gui(csv_path: str, args):
     """Subclass the existing DampingTuningGUI so its sliders retune the
-    firmware-faithful torque computed from a real ND_5 robot CSV."""
+    firmware-faithful torque computed from a real robot CSV."""
     import tkinter as tk
     from damping_tuning_gui import DampingTuningGUI
 

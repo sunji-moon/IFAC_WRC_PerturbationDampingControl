@@ -48,19 +48,26 @@ pc_tools/
   csv_torque_pipeline.py    Offline replay of the firmware state machine on recorded trials
                             -> "what torque would H10 have commanded?" before putting torque on a person
   damping_live_logger.py    Live USB-CDC logger for the damping firmware stream
+  plot_damping_trial.py     Plots a recorded trial: one reaction in detail + all reactions averaged
   xm_daq_protocol.py        Packet decoder shared with the team DAQ tools (team code, see below)
-results/figures/            Example outputs of the tools above
+sample_data/                Two recorded trials (100 Hz stream + event log + metadata)
+results/figures/            Figures made with plot_damping_trial.py from sample_data/
 ```
 
-## Results (offline replay on recorded perturbation trials)
+## Results: controller running on H10 (worn by the author)
 
-Average hip angle and velocity around the controller start, for the three perturbation types. They show clearly different velocity patterns, which is why each type gets its own leg/direction rule:
+Two trials recorded on 2026-08-26 with the final firmware, ES-slip reactions triggered with the XM button (42 events in total; gains `k_es_impact` = 9, `k_es_stance` = 11 N·m·s/rad, torque limit 12 N·m). The data is in [`sample_data/`](sample_data/).
 
-![Perturbation patterns](results/figures/perturbation_patterns_es_ls_trip.png)
+One ES-slip reaction. After the trigger, the perturbed (right) hip is damped against flexion and the stance (left) hip against extension; the stance-leg coefficient grows with the angle between the legs. The controller stops when the right-hip velocity reverses after its peak:
 
-Expected torque for one trip event: the controller waits for foot contact, applies damping, and stops when the velocity reverses:
+![Measured ES slip event](results/figures/measured_es_slip_event.png)
 
-![Trip example](results/figures/expected_torque_trip_example.png)
+All 31 events of the second trial, aligned at the trigger:
+
+![Measured ES slip average](results/figures/measured_es_slip_average.png)
+
+- **Torque tracking:** the torque H10 actually produced (estimated from motor current) follows the commanded torque closely; RMS error 0.09–0.14 N·m while the command exceeded 0.5 N·m, at peaks of about 10 N·m.
+- **Open issue:** in many events the stance-leg hip velocity oscillates at roughly 8–10 Hz while the controller is active, and a few reactions run for more than 1 s. Each leg is damped in one direction only, so its torque switches on and off as the velocity changes sign; together with the delay of the velocity filter, this likely sustains the oscillation. Not resolved within the project.
 
 ## How to use
 
@@ -74,11 +81,12 @@ pip install -r requirements.txt
 python pc_tools/damping_tuning_gui.py
 python pc_tools/csv_torque_pipeline.py --batch <folder of robot CSVs> --outdir torque_png
 python pc_tools/damping_live_logger.py
+python pc_tools/plot_damping_trial.py sample_data/20260826_052858_SJ2_mixed_damping_T01_damping.csv --event 22
 ```
-Raw experiment data is not included.
+Only the author's own trials are included; the team's other experiment data is not.
 
 ## Credits
 
 - **Control design and implementation (this repository):** Sunji Moon — damping controller firmware, tuning GUI, offline torque replay pipeline, damping stream logger.
-- **Team:** _(add team member names)_ — perturbation experiments, data-acquisition firmware, EMG logging, `xm_daq_protocol.py`. See the [team repository](https://github.com/sunji-moon/IFAC-WRC-PerturbationAssistance).
+- **Team:** Hendrik Herold, Rakyoung Kim, Neungdo Kim, Mohammed Yusef — perturbation experiments, data-acquisition firmware, EMG logging, `xm_daq_protocol.py`. See the [team repository](https://github.com/sunji-moon/IFAC-WRC-PerturbationAssistance).
 - **Platform:** KIT H10 and XM10 SDK by Angel Robotics. The SDK itself is not included here.

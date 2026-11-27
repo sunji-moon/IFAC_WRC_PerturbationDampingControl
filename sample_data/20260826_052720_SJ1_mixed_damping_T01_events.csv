@@ -1,0 +1,25 @@
+event_index,host_time_iso,host_elapsed_s,mcu_time_ms,label,detail,marker_sequence,marker_code,marker_kind,marker_accepted,marker_event_type,marker_event_side,active_event_type,active_event_side,reaction_state
+1,2026-08-26T05:27:20.840+09:00,0.008236,,logging_start,,,,,,,,,,
+2,2026-08-26T05:27:24.870+09:00,4.037683,104101.0,es_slip_trigger,button=1; kind=click; accepted=1; event=es_slip; side=right; xm_tick_ms=104089; sequence=22,22.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,2.0
+3,2026-08-26T05:27:25.879+09:00,5.050285,105131.0,reaction_stop,count=22; delta=1; last_stop_flex_vel_dps=-0.140,22.0,1.0,1.0,1.0,1.0,1.0,0.0,0.0,0.0
+4,2026-08-26T05:27:27.076+09:00,6.247238,106361.0,es_slip_trigger,button=1; kind=click; accepted=1; event=es_slip; side=right; xm_tick_ms=106348; sequence=23,23.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,2.0
+5,2026-08-26T05:27:28.086+09:00,7.257433,107371.0,reaction_stop,count=23; delta=1; last_stop_flex_vel_dps=-1.275,23.0,1.0,1.0,1.0,1.0,1.0,0.0,0.0,0.0
+6,2026-08-26T05:27:29.478+09:00,8.649086,108761.0,es_slip_trigger,button=1; kind=click; accepted=1; event=es_slip; side=right; xm_tick_ms=108747; sequence=24,24.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,2.0
+7,2026-08-26T05:27:30.551+09:00,9.720246,109811.0,reaction_stop,count=24; delta=1; last_stop_flex_vel_dps=-0.961,24.0,1.0,1.0,1.0,1.0,1.0,0.0,0.0,0.0
+8,2026-08-26T05:27:31.442+09:00,10.609500,110691.0,es_slip_trigger,button=1; kind=click; accepted=1; event=es_slip; side=right; xm_tick_ms=110679; sequence=25,25.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,2.0
+9,2026-08-26T05:27:31.949+09:00,11.117515,111231.0,reaction_stop,count=25; delta=1; last_stop_flex_vel_dps=-0.206,25.0,1.0,1.0,1.0,1.0,1.0,0.0,0.0,0.0
+10,2026-08-26T05:27:45.691+09:00,24.858077,124961.0,es_slip_trigger,button=1; kind=click; accepted=1; event=es_slip; side=right; xm_tick_ms=124951; sequence=26,26.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,2.0
+11,2026-08-26T05:27:46.076+09:00,25.245479,125361.0,reaction_stop,count=26; delta=1; last_stop_flex_vel_dps=-0.186,26.0,1.0,1.0,1.0,1.0,1.0,0.0,0.0,0.0
+12,2026-08-26T05:27:53.517+09:00,32.685819,132791.0,es_slip_trigger,button=1; kind=click; accepted=1; event=es_slip; side=right; xm_tick_ms=132773; sequence=27,27.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,2.0
+13,2026-08-26T05:27:55.613+09:00,34.783377,134851.0,reaction_stop,count=27; delta=1; last_stop_flex_vel_dps=-0.070,27.0,1.0,1.0,1.0,1.0,1.0,0.0,0.0,0.0
+14,2026-08-26T05:28:10.354+09:00,49.523280,149591.0,es_slip_trigger,button=1; kind=click; accepted=1; event=es_slip; side=right; xm_tick_ms=149574; sequence=28,28.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,2.0
+15,2026-08-26T05:28:10.925+09:00,50.096402,150211.0,reaction_stop,count=28; delta=1; last_stop_flex_vel_dps=-0.359,28.0,1.0,1.0,1.0,1.0,1.0,0.0,0.0,0.0
+16,2026-08-26T05:28:11.801+09:00,50.971755,151081.0,es_slip_trigger,button=1; kind=click; accepted=1; event=es_slip; side=right; xm_tick_ms=151063; sequence=29,29.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,2.0
+17,2026-08-26T05:28:11.865+09:00,51.035998,151141.0,reaction_stop,count=29; delta=1; last_stop_flex_vel_dps=0.039,29.0,1.0,1.0,1.0,1.0,1.0,0.0,0.0,0.0
+18,2026-08-26T05:28:13.777+09:00,52.944634,153031.0,es_slip_trigger,button=1; kind=click; accepted=1; event=es_slip; side=right; xm_tick_ms=153013; sequence=30,30.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,2.0
+19,2026-08-26T05:28:13.837+09:00,53.008719,153081.0,reaction_stop,count=30; delta=1; last_stop_flex_vel_dps=-0.207,30.0,1.0,1.0,1.0,1.0,1.0,0.0,0.0,0.0
+20,2026-08-26T05:28:15.556+09:00,54.725789,154801.0,es_slip_trigger,button=1; kind=click; accepted=1; event=es_slip; side=right; xm_tick_ms=154788; sequence=31,31.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,2.0
+21,2026-08-26T05:28:16.132+09:00,55.301338,155361.0,reaction_stop,count=31; delta=1; last_stop_flex_vel_dps=-0.658,31.0,1.0,1.0,1.0,1.0,1.0,0.0,0.0,0.0
+22,2026-08-26T05:28:16.887+09:00,56.060554,156171.0,es_slip_trigger,button=1; kind=click; accepted=1; event=es_slip; side=right; xm_tick_ms=156161; sequence=32,32.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,2.0
+23,2026-08-26T05:28:17.521+09:00,56.693775,156791.0,reaction_stop,count=32; delta=1; last_stop_flex_vel_dps=-2.490,32.0,1.0,1.0,1.0,1.0,1.0,0.0,0.0,0.0
+24,2026-08-26T05:28:25.385+09:00,64.554357,164641.0,logging_stop,user_stop,32.0,1.0,1.0,1.0,1.0,1.0,0.0,0.0,0.0
